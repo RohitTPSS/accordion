@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Monument Extended';
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    vertical-align: middle;
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    float: left;
+    margin-bottom: 100px;
+}
+
+.container {
+    padding: 0 100px;
+}
+
+.services--Logo svg text {
+    animation: stroke 5s 1 alternate;
+    font-size: 170px;
+    fill: #fff;
+}
+
+@keyframes stroke {
+    0% {
+        fill: rgba(72, 138, 20, 0);
+        stroke: #fff;
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 50%;
+        stroke-width: 2;
+    }
+
+    70% {
+        fill: rgba(72, 138, 20, 0);
+        stroke: #fff;
+    }
+
+    80% {
+        fill: rgba(72, 138, 20, 0);
+        stroke: #fff;
+        stroke-width: 3;
+    }
+
+    100% {
+        fill: #fff;
+        stroke: rgba(54, 95, 160, 0);
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 50% 0;
+        stroke-width: 0;
+    }
+}
+
+.services--Acc {
+    width: 100%;
+    max-width: 80%;
+}
+
+.services--Acc-Para {
+    font-size: 30px;
+    font-weight: 100;
+    line-height: 45px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.services--Acc-Para:before {
+    content: url(images/download.png);
+    position: absolute;
+    right: -250px;
+    top: -25px;
+}
+
+.accordionItem {
+    float: left;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px dashed #fff;
+}
+
+.accordionItem:last-child {
+    border-bottom: 0;
+}
+
+.accordionItemTitle {
+    justify-content: space-between;
+    margin: 60px 0px 60px 0px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.accordionItemHeading {
+    color: #000000;
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 80px;
+    letter-spacing: 5px;
+    -webkit-text-stroke-width: 2px;
+    stroke-width: 2px;
+    -webkit-text-stroke-color: #fff;
+    stroke: #fff;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.accordionItemHeading img {
+    width: 100px;
+    margin-right: 35px;
+    height: auto;
+    max-width: 100%;
+}
+
+.close .accordionItemContent {
+    height: 0px;
+    transition: height 1s ease;
+    transform: scaleY(0);
+    float: left;
+    display: block;
+}
+
+.accordionItemContent p {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 35px;
+}
+
+.open .accordionItemContent {
+    padding: 20px;
+    width: 100%;
+    margin: 0px 0px 30px 0px;
+    display: block;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.4s ease;
+    box-sizing: border-box;
+}
+
+.accordionItem.open .accordionItemHeading {
+    color: #fff;
+}
+
+.accordionItem.open svg path {
+    fill: #fff;
+}
+
+.accordionItem .accordionArrow,
+.accordionItem svg path,
+.accordionItem .accordionItemHeading {
+    transition: all .4s;
+}
+
+.accordionItem.open .accordionArrow {
+    transform: rotate(-90deg);
+}
+
+.accordionItem.open .accordionItemTitle {
+    margin-bottom: 25px;
+}
+
+.ourTeamHeading {
+    position: relative;
+}
+
+.ourTeam img {
+    max-width: 50%;
+}
+
+.ourTeamHeading:before {
+    content: '';
+    background: url(images/leaf.svg) no-repeat;
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    background-size: cover;
+    bottom: 30px;
+    left: 41%;
+}
+
+.ourTeamBoxes {
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 65px;
+}
+
+.ourTeamMembers {
+    text-align: center;
+}
+
+.ourTeamMembersList {
+    position: relative;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 400px;
+    width: 100%;
+}
+
+.ourTeam .ourTeamMembersListOverlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    inset: 0;
+    max-width: 100%;
+}
+
+.ourTeamMembersList video {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: all .5s;
+}
+
+.ourTeamMembersList:hover video {
+    opacity: 1;
+    z-index: 2;
+}
+
+.ourTeamMembersDetails h4 {
+    padding: 20px 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: normal;
+    letter-spacing: 2px;
+}
